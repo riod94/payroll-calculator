@@ -5,8 +5,6 @@ export default class MapArrayObject {
         if (args.length > 0) {
             Object.assign(this, ...args);
         }
-
-        return this;
     }
 
     set(name: string, value: any): any {
