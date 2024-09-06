@@ -32,17 +32,17 @@ export default class PayrollCalculator extends MapArrayObject {
         this.Result = new Result();
     }
 
-    getCalculation() {
-        if (21 == this.taxNumber) {
-            return this.calculateBaseOnPph21();
-        } else if (23 == this.taxNumber) {
+    getCalculation(): Result {
+        if (23 == this.taxNumber) {
             return this.calculateBaseOnPph23();
         } else if (26 == this.taxNumber) {
             return this.calculateBaseOnPph26();
+        } else {
+            return this.calculateBaseOnPph21();
         }
     }
 
-    private calculateBaseOnPph21() {
+    private calculateBaseOnPph21(): Result {
         this.Result.earnings.base = this.Employee.earnings.base;
 
         // Sum Employee Components for Taxable
